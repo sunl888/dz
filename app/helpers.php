@@ -54,7 +54,7 @@ if (!function_exists('image_url')) {
 
             if (is_array($style)) {
                 $parameters = array_merge($parameters, $style);
-            } elseif(is_string($style)) {
+            } elseif (is_string($style)) {
                 $parameters['p'] = $style;
             }
 
@@ -144,5 +144,13 @@ if (!function_exists('is_same_host')) {
     function is_same_host($url)
     {
         return app(\Illuminate\Http\Request::class)->getHost() == parse_url($url, PHP_URL_HOST);
+    }
+}
+
+if (!function_exists('month_convert')) {
+    function month_convert(int $month): string
+    {
+        $month_chinese = ['', '一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'];
+        return $month_chinese[$month];
     }
 }

@@ -6,7 +6,7 @@ use \App\Models\PostContent;
 $factory->define(PostContent::class, function (Faker $faker) {
 
     return [
-        'content' => $faker->realText(5000)
+        'content' => $faker->realText(2000)
     ];
 
 });
